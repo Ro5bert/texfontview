@@ -8,7 +8,5 @@ cat <<EOF >tmp.tex
 \endchart
 \bye
 EOF
-if pdftex tmp.tex; then
-	rm -f tmp.tex tmp.log answers.tex index.tex
-	xdg-open tmp.pdf
-fi
+pdftex tmp.tex && xdg-open tmp.pdf
+rm -f tmp.tex tmp.log answers.tex index.tex missfont.log
