@@ -1,12 +1,12 @@
 #!/bin/sh
 
 cat <<EOF >tmp.tex
-\input manmac \relax
-\font\myfont=$1
-\beginchart\myfont
-\normalchart
-\endchart
+\let\noinit=!
+\input testfont \relax
+\def\fontname{$1}
+\startfont
+\table
 \bye
 EOF
 pdftex tmp.tex && xdg-open tmp.pdf
-rm -f tmp.tex tmp.log answers.tex index.tex missfont.log
+rm -f tmp.tex tmp.log missfont.log testfont.log
