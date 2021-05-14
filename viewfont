@@ -1,0 +1,12 @@
+#!/bin/sh
+
+DIR="$(mktemp -d -p /tmp viewfont.XXXXXXXXXX)"
+cat <<EOF >"$DIR/tmp.tex"
+\let\noinit=!
+\input testfont \relax
+\def\fontname{$1}
+\startfont
+\table
+\bye
+EOF
+pdftex -output-directory "$DIR" "$DIR/tmp.tex" && xdg-open "$DIR/tmp.pdf"

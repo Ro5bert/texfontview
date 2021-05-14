@@ -1,2 +1,2 @@
-For example, to view the glyphs in the cmbx10 font, do "view cmbx10".
+For example, to view the glyphs in the cmbx10 font, do "viewfont cmbx10".
 Uses Knuth's testfont.
