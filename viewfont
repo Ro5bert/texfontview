@@ -9,4 +9,5 @@ cat <<EOF >"$DIR/tmp.tex"
 \table
 \bye
 EOF
-pdftex -output-directory "$DIR" "$DIR/tmp.tex" && xdg-open "$DIR/tmp.pdf"
+pdftex -halt-on-error -output-directory "$DIR" "$DIR/tmp.tex" &&
+	xdg-open "$DIR/tmp.pdf"
